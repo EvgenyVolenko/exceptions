@@ -14,8 +14,6 @@ public abstract class HumanName {
 
     @Override
     public String toString() {
-        return "ФИО " + surnameString + " " + nameString + " " + patronymicString;
+        return surnameString + " " + nameString + " " + patronymicString;
     }
-
-    
 }

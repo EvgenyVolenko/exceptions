@@ -1,5 +1,7 @@
 package Seminar_3;
+
 import Seminar_3.model.HumanWithData;
+import Seminar_3.controller.ScannerHuman;
 
 public class Program {
     public static void main(String[] args) {
@@ -13,7 +15,10 @@ public class Program {
 
         HumanWithData iiv = new HumanWithData(f, i, o, dr, tel, ge);
 
-        iiv.toString();
+        System.out.println(iiv.toString());
+
+        ScannerHuman sh = new ScannerHuman();
+        sh.run();
 
     }
 }

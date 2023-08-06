@@ -18,6 +18,4 @@ public class HumanWithData extends HumanName {
     public String toString() {
         return super.toString() + " " + dateOfBirth + " " + telephoneNumber + " " + gender;
     }
-
-    
 }
