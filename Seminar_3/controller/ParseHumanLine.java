@@ -46,6 +46,14 @@ public class ParseHumanLine {
     }
 
     public void checkTypeOfData(String[] dataArrayString) {
+
+        String[] types = new String[dataArrayString.length];
+
+        for (int i = 0; i < types.length; i++) {
+            types[i] = dataArrayString[i].getClass().getSimpleName();
+            System.out.println(types[i]);
+        }
+
         if (!isAlpha(dataArrayString[0])) {
             System.out.println("Фамиия содержит не только буквы!");
         }
@@ -58,11 +66,16 @@ public class ParseHumanLine {
         DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
         try {
             df.parse(dataArrayString[3]);
+            Long.parseLong(dataArrayString[4]);
         } catch (ParseException e) {
             System.out.println("Не правильный формат даты рождения!");
+        } catch (NumberFormatException e) {
+            System.out.println("В номере телефона не только цифры!");
         }
-        // dataArrayString[3];
-        // dataArrayString[4];
+        if (dataArrayString[5].charAt(0) != 'm' || dataArrayString[5].charAt(0) != 'f') {
+            System.out.println("Пол может быть только m или f !");
+        }
+        
         // dataArrayString[5];
     }
 
