@@ -5,6 +5,8 @@ public class HumanWithData extends HumanName {
     private String dateOfBirth;
     private long telephoneNumber;
     private char gender;
+    private int countParams = 6;
+
 
     public HumanWithData(String surnameString, String nameString, String patronymicString, String dateOfBirth,
             long telephoneNumber, char gender) {
@@ -29,6 +31,10 @@ public class HumanWithData extends HumanName {
 
     public void setGender(char gender) {
         this.gender = gender;
+    }
+    
+    public int getCountParams() {
+        return countParams;
     }
 }
  

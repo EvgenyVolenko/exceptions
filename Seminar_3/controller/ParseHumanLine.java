@@ -1,21 +1,27 @@
 package Seminar_3.controller;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 public class ParseHumanLine {
 
-    public int checkComplData(String humanString, int params, String separator) {
+    public String[] stringToArrStrings(String humanString, String separator) {
+        return humanString.split(separator);
+    }
 
-        String[] dataArrayString = humanString.split(separator);
+    public int checkComplData(String[] dataArrayString, int params) {
 
         if (dataArrayString.length > params) {
-            return - 1;
+            return -1;
         } else if (dataArrayString.length < params) {
-            return - 2;
+            return -2;
         }
 
         for (String string : dataArrayString) {
             if (string == "") {
                 System.out.println(string);
-                return - 3;
+                return -3;
             }
         }
 
@@ -37,5 +43,40 @@ public class ParseHumanLine {
             System.out.println("Вы ввели все параметры!");
             return true;
         }
+    }
+
+    public void checkTypeOfData(String[] dataArrayString) {
+        if (!isAlpha(dataArrayString[0])) {
+            System.out.println("Фамиия содержит не только буквы!");
+        }
+        if (!isAlpha(dataArrayString[1])) {
+            System.out.println("Имя содержит не только буквы!");
+        }
+        if (!isAlpha(dataArrayString[2])) {
+            System.out.println("Отчество содержит не только буквы!");
+        }
+        DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
+        try {
+            df.parse(dataArrayString[3]);
+        } catch (ParseException e) {
+            System.out.println("Не правильный формат даты рождения!");
+        }
+        // dataArrayString[3];
+        // dataArrayString[4];
+        // dataArrayString[5];
+    }
+
+    public static boolean isAlpha(String s) {
+        if (s == null) {
+            return false;
+        }
+
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (!(c >= 'A' && c <= 'Z') && !(c >= 'a' && c <= 'z')) {
+                return false;
+            }
+        }
+        return true;
     }
 }
