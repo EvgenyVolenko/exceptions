@@ -1,5 +1,6 @@
 package Seminar_3.controller;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import Seminar_3.model.HumanWithData;
@@ -31,8 +32,14 @@ public class ScannerHuman {
             humanWithData.setPatronymicString(scanner.next());
             System.out.print("Введите День рождения: ");
             humanWithData.setDateOfBirth(scanner.next());
-            System.out.print("Введите телефон: ");
-            humanWithData.setTelephoneNumber(scanner.nextLong());
+
+            try {
+                System.out.print("Введите телефон: ");
+                humanWithData.setTelephoneNumber(scanner.nextLong());
+            } catch (InputMismatchException e) {
+                System.out.println("Номер телефона введен не корректно. Повторите ввод.");
+            }
+
             System.out.print("Введите пол m/f: ");
             ge = scanner.next().charAt(0);
             humanWithData.setGender(ge);

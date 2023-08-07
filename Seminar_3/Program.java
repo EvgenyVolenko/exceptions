@@ -1,10 +1,12 @@
 package Seminar_3;
 
 import Seminar_3.model.HumanWithData;
-import Seminar_3.controller.ScannerHuman;
+import Seminar_3.controller.*;
 
 public class Program {
     public static void main(String[] args) {
+
+        final int datacount = 6;
 
         String f = "Иванов";
         String i = "Иван";
@@ -17,8 +19,17 @@ public class Program {
 
         System.out.println(iiv.toString());
 
-        ScannerHuman sh = new ScannerHuman();
-        sh.run();
+        // ScannerHuman sh = new ScannerHuman();
+        // sh.run();
+
+        ScannerLineToParse shl = new ScannerLineToParse();
+
+        String test = shl.ScannerHumanLine();
+
+        System.out.println(test);
+
+        ParseHumanLine phl = new ParseHumanLine();
+        boolean dataCompl = phl.translateResult(phl.checkComplData(test, datacount, " "));
 
     }
 }
