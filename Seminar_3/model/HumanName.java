@@ -16,4 +16,16 @@ public abstract class HumanName {
     public String toString() {
         return surnameString + " " + nameString + " " + patronymicString;
     }
+
+    public void setSurnameString(String surnameString) {
+        this.surnameString = surnameString;
+    }
+
+    public void setNameString(String nameString) {
+        this.nameString = nameString;
+    }
+
+    public void setPatronymicString(String patronymicString) {
+        this.patronymicString = patronymicString;
+    }
 }

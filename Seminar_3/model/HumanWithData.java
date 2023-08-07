@@ -18,4 +18,17 @@ public class HumanWithData extends HumanName {
     public String toString() {
         return super.toString() + " " + dateOfBirth + " " + telephoneNumber + " " + gender;
     }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public void setTelephoneNumber(long telephoneNumber) {
+        this.telephoneNumber = telephoneNumber;
+    }
+
+    public void setGender(char gender) {
+        this.gender = gender;
+    }
 }
+ 

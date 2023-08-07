@@ -8,39 +8,43 @@ public class ScannerHuman {
 
     public void run() {
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Данные о человеке: ");
-        
+        Scanner scanner = new Scanner(System.in, "cp866");
+        System.out.println("Данные о человеке: ");
+
         String f = null;
         String i = null;
         String o = null;
         String dr = null;
         long tel = 0;
         char ge = 'm';
+        String r = "no";
 
         HumanWithData humanWithData = new HumanWithData(f, i, o, dr, tel, ge);
 
         while (true) {
-            if (ge == 'e') {
-                break;
-            }
 
-            System.out.print("Введите Фамилию ");
-            f = scanner.nextLine();
-            System.out.print("Введите Имя ");
-            i = scanner.nextLine();
-            System.out.print("Введите Отчество ");
-            o = scanner.nextLine();
-            System.out.print("Введите День рождения ");
-            dr = scanner.nextLine();
-            System.out.print("Введите телефон ");
-            tel = scanner.nextLong();
-            System.out.print("Введите пол (m/f, e для выхода) ");
+            System.out.print("Введите Фамилию: ");
+            humanWithData.setSurnameString(scanner.next());
+            System.out.print("Введите Имя: ");
+            humanWithData.setNameString(scanner.next());
+            System.out.print("Введите Отчество: ");
+            humanWithData.setPatronymicString(scanner.next());
+            System.out.print("Введите День рождения: ");
+            humanWithData.setDateOfBirth(scanner.next());
+            System.out.print("Введите телефон: ");
+            humanWithData.setTelephoneNumber(scanner.nextLong());
+            System.out.print("Введите пол m/f: ");
             ge = scanner.next().charAt(0);
-
-            humanWithData = new HumanWithData(f, i, o, dr, tel, ge);
+            humanWithData.setGender(ge);
 
             System.out.println(humanWithData.toString());
+
+            System.out.print("Ввести еще yes/no: ");
+            r = scanner.next();
+
+            if (r.equals("no")) {
+                break;
+            }
 
         }
         scanner.close();
