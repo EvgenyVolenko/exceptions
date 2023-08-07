@@ -75,8 +75,6 @@ public class ParseHumanLine {
         if (dataArrayString[5].charAt(0) != 'm' || dataArrayString[5].charAt(0) != 'f') {
             System.out.println("Пол может быть только m или f !");
         }
-        
-        // dataArrayString[5];
     }
 
     public static boolean isAlpha(String s) {
