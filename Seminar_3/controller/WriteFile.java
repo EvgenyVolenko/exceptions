@@ -14,6 +14,7 @@ public class WriteFile {
             writer.write(humanWithData.toString());
             writer.append('\n');
             writer.flush();
+            System.out.println("Запись в файл прошла успешно");
         }
         catch(IOException ex){
              
