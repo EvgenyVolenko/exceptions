@@ -47,12 +47,12 @@ public class ParseHumanLine {
 
     public void checkTypeOfData(String[] dataArrayString) {
 
-        String[] types = new String[dataArrayString.length];
+        // String[] types = new String[dataArrayString.length];
 
-        for (int i = 0; i < types.length; i++) {
-            types[i] = dataArrayString[i].getClass().getSimpleName();
-            System.out.println(types[i]);
-        }
+        // for (int i = 0; i < types.length; i++) {
+        //     types[i] = dataArrayString[i].getClass().getSimpleName();
+        //     System.out.println(types[i]);
+        // }
 
         if (!isAlpha(dataArrayString[0])) {
             System.out.println("Фамиия содержит не только буквы!");
@@ -72,7 +72,7 @@ public class ParseHumanLine {
         } catch (NumberFormatException e) {
             System.out.println("В номере телефона не только цифры!");
         }
-        if (dataArrayString[5].charAt(0) != 'm' || dataArrayString[5].charAt(0) != 'f') {
+        if (!(dataArrayString[5].charAt(0) == 'm' || dataArrayString[5].charAt(0) == 'f')) {
             System.out.println("Пол может быть только m или f !");
         }
     }
@@ -84,7 +84,8 @@ public class ParseHumanLine {
 
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-            if (!(c >= 'A' && c <= 'Z') && !(c >= 'a' && c <= 'z')) {
+            // !(c >= 'A' && c <= 'Z') && !(c >= 'a' && c <= 'z') && 
+            if (!(c >= 'А' && c <= 'Я') && !(c >= 'а' && c <= 'я')) {
                 return false;
             }
         }

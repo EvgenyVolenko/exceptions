@@ -7,7 +7,6 @@ public class HumanWithData extends HumanName {
     private char gender;
     private int countParams = 6;
 
-
     public HumanWithData(String surnameString, String nameString, String patronymicString, String dateOfBirth,
             long telephoneNumber, char gender) {
         super(surnameString, nameString, patronymicString);
@@ -32,9 +31,12 @@ public class HumanWithData extends HumanName {
     public void setGender(char gender) {
         this.gender = gender;
     }
-    
+
     public int getCountParams() {
         return countParams;
     }
+
+    public String getsurname() {
+        return super.surnameString;
+    }
 }
- 

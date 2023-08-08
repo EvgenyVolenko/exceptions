@@ -32,6 +32,8 @@ public class Program {
         ParseHumanLine phl = new ParseHumanLine();
         boolean dataCompl = phl.translateResult(phl.checkComplData(phl.stringToArrStrings(test, separ), datacount));
         phl.checkTypeOfData(phl.stringToArrStrings(test, separ));
+
+        WriteFile.WrFile(iiv);
         
     }
 }
