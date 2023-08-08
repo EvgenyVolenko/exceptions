@@ -55,15 +55,15 @@ public class ParseHumanLine {
         // }
 
         if (!isAlpha(dataArrayString[0])) {
-            System.out.println("Фамилия содержит не только буквы!");
+            System.out.println("Фамилия содержит не только буквы русского алфавита!");
             return false;
         }
         if (!isAlpha(dataArrayString[1])) {
-            System.out.println("Имя содержит не только буквы!");
+            System.out.println("Имя содержит не только буквы русского алфавита!");
             return false;
         }
         if (!isAlpha(dataArrayString[2])) {
-            System.out.println("Отчество содержит не только буквы!");
+            System.out.println("Отчество содержит не только буквы русского алфавита!");
             return false;
         }
         DateFormat df = new SimpleDateFormat("dd.MM.yyyy");

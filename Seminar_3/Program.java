@@ -10,7 +10,7 @@ public class Program {
         String separator = " ";
         int params = 6;
 
-        String f = "Eванов";
+        String f = "Иванов";
         String i = "Иван";
         String o = "Иванович";
         String dr = "10.10.2000";
