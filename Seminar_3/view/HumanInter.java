@@ -18,6 +18,7 @@ public class HumanInter {
         while (true) {
 
             temp = scannerLineToParse.ScannerHumanLine();
+
             if (parseHumanLine.translateResult(
                     parseHumanLine.checkComplData(parseHumanLine.stringToArrStrings(temp, separator), params))
                     && parseHumanLine.checkTypeOfData(parseHumanLine.stringToArrStrings(temp, separator))) {
@@ -29,7 +30,10 @@ public class HumanInter {
                         human.setGender(parseHumanLine.stringToArrStrings(temp, separator)[5].charAt(0));
 
                         WriteFile.WrFile(human);
+            } else {
+                System.out.println("Повторите ввод!");
             }
+            
         }
 
     }
