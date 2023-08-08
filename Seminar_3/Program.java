@@ -1,6 +1,7 @@
 package Seminar_3;
 
 import Seminar_3.model.HumanWithData;
+import Seminar_3.view.HumanInter;
 import Seminar_3.controller.*;
 
 public class Program {
@@ -18,14 +19,9 @@ public class Program {
 
         HumanWithData iiv = new HumanWithData(f, i, o, dr, tel, ge);
 
-        System.out.println(iiv.toString());
-
-        ScannerLineToParse shl = new ScannerLineToParse();
-
-        String test = shl.ScannerHumanLine();
-
-        System.out.println(test);
-
         WriteFile.WrFile(iiv);
+
+        HumanInter humanInter = new HumanInter();
+        humanInter.run(separator, params);
     }
 }
