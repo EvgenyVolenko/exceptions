@@ -15,6 +15,7 @@ public class WriteFile {
             writer.append('\n');
             writer.flush();
             System.out.println("Запись в файл прошла успешно");
+            writer.close();
         }
         catch(IOException ex){
              
