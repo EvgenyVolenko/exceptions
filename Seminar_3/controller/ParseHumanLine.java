@@ -55,7 +55,7 @@ public class ParseHumanLine {
         // }
 
         if (!isAlpha(dataArrayString[0])) {
-            System.out.println("Фамиия содержит не только буквы!");
+            System.out.println("Фамилия содержит не только буквы!");
             return false;
         }
         if (!isAlpha(dataArrayString[1])) {
