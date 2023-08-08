@@ -15,7 +15,7 @@ public class HumanInter {
         HumanWithData human = new HumanWithData(null, null, null, null, 0, 'm');
 
         String temp;
-        String r = "no";
+        String r;
 
         while (true) {
 
